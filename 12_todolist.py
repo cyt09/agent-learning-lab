@@ -2,7 +2,7 @@ todo_list=[]
 def add_task():
     text=input("请输入待办任务：")
     todo_list.append({"task":text,"done":False})
-    print("✅任务添加成功！")
+    print("✅恭喜任务添加成功！")
 
 def list_tasks():
     if len(todo_list)==0:
@@ -21,9 +21,9 @@ def mark_finished():
     num=int(input("请输入要标记完成的任务编号："))
     if 0<=num<len(todo_list):
         todo_list[num]["done"]=True
-        print("已标记完成")
+        print("任务已标记完成")
     else:
-        print("编号无效")
+        print("抱歉你的编号无效")
 
 def delete_task():
     list_tasks()
@@ -34,7 +34,7 @@ def delete_task():
         todo_list.pop(num)
         print("任务已经删除")
     else:
-        print("编号无效")
+        print("抱歉你的编号无效")
 
 def main():
     while True:#无限循环（死循环）while后面条件写True就代表条件永远成立，里面的代码会一遍一遍反复跑。
@@ -57,10 +57,10 @@ def main():
         elif choice=="4":
             delete_task()
         elif choice=="0":
-            print("程序结束")
+            print("程序已经结束")
             break
         else:
-            print("输入无效")
+            print("抱歉你的输入无效，请重新输入")
 
 if __name__=="__main__":
     main()
